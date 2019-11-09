@@ -6,6 +6,10 @@
 		<title>Thrilling Frontend Technical Challenge</title>
 
 		<link rel="icon" type="image/x-icon" href="/tech-challenge/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+		<script src="search.js"></script>
+
 
 		<style>
 			body {
@@ -15,28 +19,15 @@
 	</head>
 
 	<body>
-		<h1>Thrilling Frontend Technical Challenge</h1>
+		<form>
 
-		<h2>Open your Developer Tools Console to view output.</h2>
+		  <div class="form-group">
+		    <label for="searchBox">Enter Your Search Term</label>
+		    <input type="text" class="form-control" id="searchBox" placeholder="Search">
+		  </div>
+		  <button type="button" class="btn btn-primary" id="searchButton">Submit</button>
+		</form>
+		<ul id="list"></ul>
 
-		<script>
-			var request = new XMLHttpRequest();
-
-			request.open('GET', 'https://api.nytimes.com/svc/topstories/v2/science.json?api-key=Gwxln5M3geWlhR6UE0TY1FUWKSG3wCil');
-
-			request.onload = function() {
-				if (this.status >= 200 && this.status < 400) {
-					console.log(JSON.parse(this.response));
-				} else {
-					console.error(this);
-				}
-			};
-
-			request.onerror = function() {
-				console.error(this);
-			};
-
-			request.send();
-		</script>
 	</body>
 </html>
