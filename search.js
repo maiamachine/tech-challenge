@@ -1,16 +1,12 @@
 "use strict";
 
-
-
+//display the list results
 var appendArticleAttributes = function(article) {
 
   var title = document.createElement('div');
   var section = document.createElement('div');
   var byline = document.createElement('div');
   var link = document.createElement('a');
-
-
-
   var li = document.createElement('li');
 
 	title.textContent = "Title: " + article.title;
@@ -27,10 +23,10 @@ var appendArticleAttributes = function(article) {
   list.appendChild(li);
 }
 
+//make request and map over results
 var makeRequest = function() {
 
   var searchTerm = document.getElementById("searchBox").value;
-
   var request = new XMLHttpRequest();
 
   request.open('GET', 'https://api.nytimes.com/svc/topstories/v2/science.json?api-key=Gwxln5M3geWlhR6UE0TY1FUWKSG3wCil');
@@ -58,7 +54,7 @@ var makeRequest = function() {
 }
 
 
-
+//retrieve relevant DOM elements including buttons and input forms
 window.addEventListener('load', function() {
 
   var searchButton = document.getElementById("searchButton");
